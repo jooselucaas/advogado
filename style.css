@@ -1,0 +1,957 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Nunito', serif;
+            height: 100%;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            width: 100%;
+            max-width: 1200px; /* Define uma largura máxima para o nav */
+            margin: 0 auto; /* Centraliza o nav dentro do .center */
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #5a5a5a;
+        }
+
+        nav ul li a.active {
+            color: #5a5a5a;
+        }
+
+        .logo {
+            font-size: 18px;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: auto; /* Garante que o logo fique alinhado à esquerda */
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        /* Estiliza o contêiner centralizado do menu */
+        .center {
+            width: 100%;
+            height: 80px;
+            margin: 0 auto;
+            background-color: #202020;
+            display: flex;
+            justify-content: center; /* Centraliza o conteúdo horizontalmente */
+            align-items: center; /* Alinha verticalmente */
+        }
+
+        /* Estiliza o botão de menu */
+        .checkbtn {
+            font-size: 30px;
+            color: white;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+        }
+
+        /* Inicialmente oculta o ícone de fechar do menu */
+        #closeIcon {
+            display: none;
+        }
+
+        /* Mostra e oculta os ícones do menu com base no estado do checkbox */
+        #check:checked ~ .checkbtn #menuIcon {
+            display: none; /* Oculta o ícone de "hamburguer" quando o menu está aberto */
+        }
+        
+        #check:checked ~ .checkbtn #closeIcon {
+            display: inline; /* Exibe o ícone de "X" quando o menu está aberto */
+        }
+
+        /* Oculta o checkbox do menu */
+        #check {
+            display: none;
+        }
+
+
+        /* seção INICIO */
+
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Preenche toda a altura da tela */
+            text-align: center;
+            padding: 0 20px;
+            background-image: url('images/imagem\ de\ fundo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* cor preta com 50% de opacidade */
+            z-index: 1;
+        }
+        
+        .apresentacao {
+            position: relative;
+            z-index: 2; /* Coloca o conteúdo acima da camada transparente */
+            max-width: 800px; /* Limita a largura do conteúdo */
+        }
+        
+        .apresentacao h2 {
+            color: #fff;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .apresentacao hr {
+            width: 50%;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+        }
+        
+        .apresentacao h4 {
+            color: #ccc;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        .botao {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #202020;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 50px;
+            transition: background-color 0.3s;
+        }
+        
+        .botao:hover {
+            background-color: #5a5a5a;
+        }
+
+
+        /* fim seção INICIO */
+
+
+        /* Seção "Quem Somos" */
+        #quem-somos {
+            background-color: #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 60%;
+            padding: 100px 80px;
+        }
+
+        .center-quem-somos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .box-quem-somos{
+            width: 100%;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .texto {
+            max-width: 600px;
+        }
+
+        .nome-advogado {
+            font-size: 18px; /* Tamanho de fonte menor */
+            font-weight: 600;
+            color: #6e6e6e;
+            margin-bottom: 20px;
+        }
+
+        .descricao-advogado {
+            font-size: 35px;
+            font-weight: 700;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .texto p {
+            font-size: 17px;
+            color: #666;
+            margin-bottom: 10px;
+
+        }
+
+        .imagem-advogado {
+            width: 250px;
+            height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .imagem-advogado img {
+            width: 100%;
+            height: 50%;
+            border-radius: 50%;
+            border: 3px solid #3e3e3e;
+            object-fit: cover; /* Faz a imagem preencher o círculo */
+            margin-top: 50px;
+        }
+
+        .botao-entre-contato {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #202020;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 50px;
+            transition: background-color 0.3s;
+            position: relative;
+            top: -50px;
+            margin-bottom: 20px;
+            transform: -50% -50%;
+        }
+
+        .botao-entre-contato:hover {
+            background-color: #5a5a5a;
+        }
+
+        #escritorio {
+            position: relative;
+            padding: 100px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            overflow: hidden;
+        }
+        
+        #escritorio::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('images/imagem\ de\ fundo.jpg'); /* Adicione a URL da sua imagem */
+            background-size: cover;
+            background-position: center;
+            filter: blur(1.5px); /* Aumenta o desfoque */
+            z-index: 1;
+        }
+        
+        #escritorio::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Escurecimento suave */
+            z-index: 2;
+        }
+        
+        .conteudo-escritorio {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            z-index: 3; /* Garante que o conteúdo fique acima da imagem e do desfoque */
+            color: white;
+        }
+        
+        .texto-esquerda,
+        .texto-direita {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .texto-esquerda {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .texto-direita {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        #escritorio h2 {
+            color: #ccc;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        hr {
+            width: 50px;
+            border: 1px solid white;
+            margin: 20px 0;
+        }
+
+        #botao{
+            background-color: #202020;
+            padding: 100px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .missao.expanded {
+            margin-bottom: 230px; /* Margem quando o texto de Missão estiver visível */
+        }
+
+        .visao.expanded {
+            margin-bottom: 230px; /* Margem quando o texto de Missão estiver visível */
+        }
+
+        .valores.expanded {
+            margin-bottom: 230px; /* Margem quando o texto de Missão estiver visível */
+        }
+        
+        .missao, .visao, .valores{
+            background-color: #ccc;
+            color: #202020;
+            border: none;
+            padding: 10px 300px 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            position: relative; /* Adicionado para o posicionamento relativo */
+            transition: margin-bottom 0.3s ease; /* Animação suave para a margem */
+        }
+
+        .missao.active,
+        .visao.active,
+        .valores.active {
+            background-color: #3f3f3f; /* Cor de fundo do botão ao ser clicado */
+            color: white; /* Cor do texto ao ser clicado */
+        }
+        
+        .missao:hover, .visao:hover, .valores:hover {
+            background-color: #3f3f3fe4; /* Cor ao passar o mouse */
+            transition: 0.3s;
+            color: white;
+        }
+        
+        #botao .texto {
+            max-height: 0; /* Oculta o texto inicialmente */
+            overflow: scroll; /* Impede o texto de transbordar */
+            transition: max-height 0.3s ease; /* Transição suave para a altura */
+            position: absolute; /* Permite que o texto fique sobre o botão */
+            top: 100%; /* Faz o texto aparecer abaixo do botão */
+            left: 0; /* Alinha o texto à esquerda do botão */
+            width: 100%; /* Faz o texto ocupar toda a largura do botão */
+            z-index: 10; /* Garante que o texto fique acima de outros elementos */
+            background-color: #f8f8f8; /* Fundo do texto */
+            padding: 0 20px;
+        }
+
+        #botao .texto::-webkit-scrollbar {
+            display: none; /* Esconde a barra de rolagem */
+        }
+        
+        .texto:not(.oculto) {
+            display: block; /* Exibe o texto quando não estiver oculto */
+        }
+
+
+        #servicos {
+            background-color: #ccc; /* Cor de fundo da seção */
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        .servicos-container {
+            max-width: 1200px; /* Largura máxima do contêiner */
+            margin: 0 auto; /* Centraliza o contêiner */
+        }
+        
+        #servicos h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #202020; /* Cor do título */
+        }
+        
+        .servico {
+            cursor: pointer;
+            background-color: #fff; /* Cor de fundo dos serviços */
+            border: 1px solid #20202095; /* Borda para os serviços */
+            border-radius: 8px; /* Bordas arredondadas */
+            padding: 20px;
+            margin: 20px 0; /* Margem entre os serviços */
+            transition: box-shadow 0.1s; /* Efeito de transição */
+        }
+        
+        .servico:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra ao passar o mouse */
+        }
+        
+        .servico h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #202020; /* Cor dos títulos dos serviços */
+        }
+        
+        .servico p {
+            font-size: 1em;
+            color: #666; /* Cor do texto dos serviços */
+        }
+
+
+        /* Seção Consultoria */
+        .consultoria {
+            padding: 60px 20px; /* Espaçamento da seção */
+            background-color: #202020; /* Fundo da seção */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        .consultoria h1 {
+            font-size: 2.5em; /* Tamanho do título */
+            color: #ccc; /* Cor do título */
+            margin-bottom: 20px; /* Margem abaixo do título */
+        }
+
+        .consultoria hr {
+            width: 50%; /* Largura da linha */
+            margin: 20px auto; /* Margem acima e abaixo da linha */
+            border: 1px solid white; /* Cor da linha */
+        }
+
+        .consultoria p {
+            font-size: 1.2em; /* Tamanho do texto */
+            color: #ccc; /* Cor do texto */
+            margin-bottom: 30px; /* Margem abaixo do texto */
+        }
+
+        .consultoria .botao {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ccc; /* Cor do fundo do botão */
+            color: #202020; /* Cor do texto do botão */
+            text-decoration: none; /* Remove o sublinhado do botão */
+            font-size: 1em; /* Tamanho do texto do botão */
+            border-radius: 50px; /* Bordas arredondadas do botão */
+            transition: background-color 0.3s; /* Transição suave da cor do botão */
+        }
+
+        .consultoria .botao:hover {
+            background-color: white; /* Cor do fundo do botão ao passar o mouse */
+        }
+
+
+        
+
+
+        /* Estilos gerais da seção de contato */
+        #contato {
+            background-color: #f8f8f8; /* Cor de fundo semelhante ao exemplo */
+            padding: 50px 0; /* Espaçamento interno */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container da seção de contato */
+        .containerr {
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* Estilos para a estrutura do contato */
+        .contato-container {
+            display: flex;
+            flex-wrap: wrap; /* Para ficar responsivo em telas menores */
+            justify-content: space-between; /* Espaço entre as colunas */
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Estilos da coluna esquerda (informações) */
+        .contato-esquerdo {
+            background-color: #202020;
+            color: #fff;
+            padding: 40px;
+            flex: 1;
+            min-width: 300px; /* Define largura mínima */
+        }
+
+        /* Estilos para a coluna direita (formulário) */
+        .contato-direito {
+            padding: 40px;
+            flex: 1;
+            min-width: 300px; /* Define largura mínima */
+        }
+
+        .contato-direito h2 {
+            text-align: center;
+        }
+
+        /* Estilo do título principal */
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        /* Parágrafo abaixo do título */
+        #contato p {
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            color: #ccc;
+        }
+
+        /* Estilos para os itens de informação */
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .info-item i {
+            color: #ccc;
+            margin-right: 50px;
+            font-size: 1.4em;
+        }
+
+        /* Estilos para o título do formulário */
+        .contato-direito h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #202020;
+        }
+
+        /* Estilos dos campos do formulário */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #202020;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            resize: none;
+        }
+
+        /* Borda e foco nos campos */
+        input:focus, textarea:focus {
+            border-color: #202020;
+            outline: none;
+        }
+
+        /* Estilo do botão */
+        .btn-contato {
+            background-color: #202020;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            margin: 20px auto 0; /* Centraliza o botão */
+            display: block; /* Garante que o botão seja tratado como bloco */
+            width: fit-content; /* Ajusta a largura do botão ao conteúdo */
+        }
+
+        /* Efeito hover no botão */
+        .btn-contato:hover {
+            background-color: #404040;
+        }
+
+
+        .footer {
+            background-color: #202020; /* Cor de fundo do footer */
+            color: #fff; /* Cor do texto */
+            text-align: center; /* Centraliza o texto */
+            padding: 20px 0; /* Espaçamento interno */
+            position: relative; /* Posição relativa para uso futuro */
+            bottom: 0; /* Posiciona no fundo */
+            width: 100%; /* Largura total */
+        }
+        
+        .containerrr {
+            max-width: 1200px; /* Limita a largura do conteúdo */
+            margin: 0 auto; /* Centraliza o container */
+            padding: 0 15px; /* Espaçamento nas laterais */
+        }
+                
+        
+        
+
+        /* RESPONSIVIDADE DO S I T E */
+
+
+        @media (max-width:1020px){
+
+            /* Exibe o botão de menu em telas menores */
+            .checkbtn {
+                display: block;
+                font-size: 30px;
+                color: white;
+                position: absolute;
+                right: 20px;
+                top: 1px;
+                cursor: pointer;
+            }
+            /* ... */
+
+
+            .nav-menu {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+
+            /* Estiliza o menu de navegação */
+            .nav-menu ul {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                min-height: 100%;
+                background: #202020;
+                top: 80px;
+                left: -100%;
+                text-align: center;
+                transition: all 0.5s;
+                border-top: 1px solid #5a5a5a;
+                z-index: 10;
+                display: flex;
+                flex-direction: column; /* Adiciona esta linha */
+                align-items: center; /* Adiciona esta linha para centralizar os itens */
+                justify-content: center;
+            }
+            /* ... */
+
+              /* Ajusta a posição dos itens do menu para cima */
+            .nav-menu ul li {
+                transform: translateY(-50px);
+            }
+        
+
+            /* Estiliza os itens do menu */
+            .nav-menu ul li {
+                display: block; /* Garante que os itens fiquem em bloco */
+                margin: 10px 20px; /* Ajusta o espaçamento entre os itens */
+                line-height: 30px;
+            }
+            /* ... */
+        
+
+            /* Estiliza os links dentro dos itens do menu */
+            .nav-menu ul li a {
+                font-size: 20px;
+                display: block; /* Garante que os links ocupem a largura total dos itens */
+                padding: 10px 20px; /* Adiciona um pouco de padding para facilitar o clique */
+            }
+            /* ... */
+        
+
+             /* Estiliza o efeito ao passar o mouse ou quando o link está ativo */
+             .nav-menu ul li a:hover, .nav-menu ul li a.active {
+                background: none;
+                color: #5a5a5a;
+            }
+            /* ... */
+        
+
+            /* Exibe o menu quando o checkbox é marcado */
+            #check:checked ~ .nav-menu ul {
+                left: 0;
+            }
+            /* ... */
+
+            .botao:hover {
+                background-color: #5a5a5a;
+                color: #fff;
+            }
+        }
+
+
+        @media (min-width:1020px) {
+
+            /* Oculta o botão de menu em telas maiores */
+            label.checkbtn {
+                display: none;
+            }
+            /* ... */
+        }
+
+
+        @media (max-width:1036px) {
+
+             /* Ajusta o estilo do elemento de navegação */
+            nav {
+                width: 100%;
+                padding: 0 50px;
+            }
+            /* ... */
+        }
+
+
+
+        @media (max-width:1080px){
+            #quem-somos {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 50px 20px;
+                height: auto; /* Ajusta a altura para se adaptar ao conteúdo */
+            }
+
+            .center-quem-somos {
+                flex-direction: column;
+                align-items: center;
+                text-align: center; /* Centraliza o texto */
+                padding: 0;
+            }
+
+            .imagem-advogado {
+                width: 200px; /* Ajusta o tamanho da imagem para telas menores */
+                height: 200px;
+                margin-bottom: 20px; /* Adiciona espaçamento abaixo da imagem */
+            }
+
+            .imagem-advogado img {
+                width: 100%;
+                height: 100%;
+                margin-top: 0; /* Remove o margin-top para evitar espaçamento excessivo */
+            }
+
+            .box-quem-somos {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center; /* Centraliza o texto */
+                padding: 0 20px;
+            }
+
+            .texto {
+                max-width: 100%; /* O texto ocupa toda a largura disponível */
+                margin-bottom: 20px; /* Espaçamento para manter o layout limpo */
+            }
+
+            .descricao-advogado {
+                font-size: 28px; /* Diminui o tamanho da fonte em telas menores */
+                margin-bottom: 15px;
+            }
+
+            .nome-advogado {
+                font-size: 16px;
+            }
+
+            .texto p {
+                font-size: 15px; /* Diminui o tamanho do parágrafo */
+            }
+
+            .botao-entre-contato {
+                position: relative;
+                top: 0; /* Remove o deslocamento vertical */
+                margin: 20px auto 0; /* Centraliza o botão e ajusta o espaçamento */
+                display: block;
+            }
+
+            .conteudo-escritorio {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .texto-esquerda,
+            .texto-direita {
+                align-items: center;
+            }
+        
+            h2 {
+                font-size: 27px;
+            }
+        
+            p {
+                font-size: 19px;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            #botao {
+                flex-direction: column; /* Muda a direção do flex para coluna */
+            }
+        
+            .button-container {
+                width: 100%; /* Faz os botões ocuparem toda a largura */
+                margin: 10px 0; /* Adiciona margem entre os botões */
+                
+            }
+        
+            .missao, .visao, .valores {
+                padding: 10px 20px; /* Ajuste o padding dos botões */
+                width: 90%; /* Ajusta a largura dos botões */
+            }
+
+            .consultoria h1 {
+                font-size: 2em; /* Ajusta o tamanho do título em telas menores */
+            }
+        
+            .consultoria p {
+                font-size: 1em; /* Ajusta o tamanho do texto em telas menores */
+            }
+        
+            .consultoria hr {
+                width: 80%; /* Aumenta a largura da linha em telas menores */
+            }
+        
+            .consultoria .botao {
+                padding: 12px 20px; /* Ajusta o padding do botão em telas menores */
+                font-size: 0.9em; /* Reduz o tamanho do texto do botão em telas menores */
+                color: #202020;
+            }
+
+            .consultoria .botao:hover {
+                background-color: white; /* Cor do fundo do botão ao passar o mouse */
+            }
+
+            .contato-container {
+                flex-direction: column; /* Coloca as colunas uma abaixo da outra */
+            }
+        
+            .contato-esquerdo, .contato-direito {
+                min-width: 100%; /* Cada coluna ocupa 100% */
+                padding: 30px; /* Ajusta o espaçamento */
+            }
+
+            .footer {
+                padding: 15px 0; /* Ajusta o padding em telas menores */
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            .consultoria h1 {
+                font-size: 1.8em; /* Ajusta o tamanho do título em telas muito pequenas */
+            }
+        
+            .consultoria p {
+                font-size: 0.9em; /* Ajusta o tamanho do texto em telas muito pequenas */
+            }
+        }
+
+
+        @media (max-width: 900px) {
+            #botao {
+                flex-direction: column; /* Muda a direção do flex para coluna */
+            }
+        
+            .button-container {
+                width: 100%; /* Faz os botões ocuparem toda a largura */
+                margin: 10px 0; /* Adiciona margem entre os botões */
+            }
+        
+            .missao, .visao, .valores {
+                padding: 10px 20px; /* Ajuste o padding dos botões */
+                width: 90%; /* Ajusta a largura dos botões */
+            }
+        }
+
+        @media (max-width: 1346px) and (min-width: 768px) {
+            .missao, .visao, .valores {
+                padding: 10px 20px; /* Ajuste o padding dos botões */
+                width: 90%; /* Ajusta a largura dos botões */
+            }
+            .button-container {
+                width: 100%; /* Faz os botões ocuparem toda a largura */
+                margin: 10px 0; /* Adiciona margem entre os botões */
+                
+            }
+            .consultoria .botao {
+                color: #202020;
+            }
+        }
+        
+        
+        @media (max-width: 1250px) and (min-width: 900px) {
+            .servico {
+                cursor: pointer;
+                background-color: #fff; /* Cor de fundo dos serviços */
+                border: 1px solid #20202095; /* Borda para os serviços */
+                border-radius: 8px; /* Bordas arredondadas */
+                padding: 20px;
+                margin: 20px 50px; /* Margem entre os serviços */
+                transition: box-shadow 0.1s; /* Efeito de transição */
+            }
+        }
+ 
+
+        @media (min-width: 800px){
+            .info-item {
+                margin-bottom: 50px;
+            }
+        }
